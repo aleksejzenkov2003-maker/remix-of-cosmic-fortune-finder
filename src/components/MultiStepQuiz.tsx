@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { MapPin } from "lucide-react";
+import { MapPin, Star, Sparkles, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import QuizStep from "./QuizStep";
 import LoadingWheel from "./LoadingWheel";
 import MysticDateScrollPicker from "./MysticDateScrollPicker";
 import MysticTimePicker from "./MysticTimePicker";
 import astrologerImage from "@/assets/astrologer.jpg";
+import astrologer2Image from "@/assets/astrologer-2.png";
+import astrologer3Image from "@/assets/astrologer-3.png";
+
 interface MultiStepQuizProps {
   onSubmit: (data: {
     date: string;
@@ -13,6 +16,7 @@ interface MultiStepQuizProps {
     time: string;
   }) => void;
 }
+
 const MultiStepQuiz = ({
   onSubmit
 }: MultiStepQuizProps) => {
@@ -23,8 +27,8 @@ const MultiStepQuiz = ({
     city: "",
     time: ""
   });
+
   const handleNext = () => {
-    // Yandex Metrika goals
     if (typeof window !== 'undefined' && (window as any).ym) {
       if (currentStep === 1) {
         (window as any).ym(105525628, 'reachGoal', 'date_selected');
@@ -41,14 +45,17 @@ const MultiStepQuiz = ({
       setIsLoading(true);
     }
   };
+
   const handleBack = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
     }
   };
+
   const handleLoadingComplete = () => {
     onSubmit(formData);
   };
+
   if (isLoading) {
     return <LoadingWheel onComplete={handleLoadingComplete} />;
   }
@@ -65,11 +72,11 @@ const MultiStepQuiz = ({
 
         {/* Content */}
         <div className="flex-1 flex flex-col px-4 pb-8 overflow-hidden">
-          <div className="w-full max-w-md mx-auto space-y-6 animate-fade-in flex flex-col h-full">
+          <div className="w-full max-w-md mx-auto space-y-6 animate-fade-in flex flex-col">
             {/* Name */}
             <div className="text-center flex-shrink-0 mt-4">
               <h2 className="text-2xl sm:text-3xl font-bold text-gradient-gold glow-gold">
-                Дипломированный астролог Аделина
+                Дипломированный астролог Вера
               </h2>
             </div>
 
@@ -78,7 +85,7 @@ const MultiStepQuiz = ({
               <div className="absolute -inset-3 bg-gradient-to-r from-primary via-accent to-secondary rounded-full opacity-40 group-hover:opacity-60 blur-2xl transition-opacity duration-500 animate-pulse-mystical" />
               
               <div className="relative rounded-full overflow-hidden border-4 border-accent/50 shadow-[0_0_60px_rgba(255,216,138,0.6)] aspect-square glow-mystical">
-                <img src={astrologerImage} alt="Астролог" className="w-full h-full object-cover" />
+                <img src={astrologerImage} alt="Астролог Вера" className="w-full h-full object-cover" />
               </div>
 
               {/* Floating elements */}
@@ -122,6 +129,69 @@ const MultiStepQuiz = ({
                 Получить анализ ✨
               </Button>
             </div>
+
+            {/* === Info Blocks === */}
+
+            {/* Block 1: About Astrology */}
+            <div className="bg-card/20 backdrop-blur-md border-2 border-accent/30 rounded-2xl p-5 space-y-3 glow-mystical">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-gold" />
+                <h3 className="text-lg font-bold text-gradient-gold">Что раскроет астрология?</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-foreground/90">
+                <li className="flex items-start gap-2">
+                  <Heart className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                  <span><strong>Отношения</strong> — совместимость, кармические связи и идеальный партнёр</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Star className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                  <span><strong>Карьера</strong> — предназначение, таланты и лучшие периоды для роста</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Sparkles className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                  <span><strong>Здоровье</strong> — слабые зоны и рекомендации по укреплению энергии</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Block 2: About Expert */}
+            <div className="bg-card/20 backdrop-blur-md border-2 border-accent/30 rounded-2xl p-5 space-y-4 glow-mystical">
+              <div className="flex items-center gap-2">
+                <Star className="w-5 h-5 text-gold" />
+                <h3 className="text-lg font-bold text-gradient-gold">Об эксперте Вере</h3>
+              </div>
+              <div className="flex gap-4 items-start">
+                <div className="w-24 h-24 rounded-xl overflow-hidden border-2 border-accent/40 flex-shrink-0">
+                  <img src={astrologer2Image} alt="Астролог Вера" className="w-full h-full object-cover" />
+                </div>
+                <div className="text-sm text-foreground/90 space-y-1">
+                  <p>✨ 20+ лет практики в ведической и западной астрологии</p>
+                  <p>🎓 Дипломированный специалист</p>
+                  <p>📋 Более 1700 персональных консультаций</p>
+                  <p>🌟 Автор курсов и наставник</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Block 3: What you get */}
+            <div className="bg-card/20 backdrop-blur-md border-2 border-accent/30 rounded-2xl p-5 space-y-4 glow-mystical">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-gold" />
+                <h3 className="text-lg font-bold text-gradient-gold">Что вы получите</h3>
+              </div>
+              <div className="flex gap-4 items-start">
+                <div className="w-24 h-24 rounded-xl overflow-hidden border-2 border-accent/40 flex-shrink-0">
+                  <img src={astrologer3Image} alt="Натальная карта" className="w-full h-full object-cover" />
+                </div>
+                <div className="text-sm text-foreground/90 space-y-1">
+                  <p>🔮 Разбор ключевых аспектов натальной карты</p>
+                  <p>🪐 Анализ положения планет на момент рождения</p>
+                  <p>💫 Персональные рекомендации от эксперта</p>
+                  <p>📩 Результат в Telegram — быстро и удобно</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>;
