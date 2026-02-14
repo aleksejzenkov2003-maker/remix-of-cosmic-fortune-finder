@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
         
         <p className="text-xs text-center text-muted-foreground">
-          © 2024 Все права защищены
+          © 2026 Все права защищены
         </p>
       </div>
     </footer>
