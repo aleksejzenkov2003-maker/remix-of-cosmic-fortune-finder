@@ -13,7 +13,7 @@ const QuizStep = ({ children, title, subtitle, step, totalSteps }: QuizStepProps
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Progress bar */}
+      {/* Progress bar  */}
       <div className="w-full h-1 bg-muted/30">
         <div 
           className="h-full bg-gradient-gold transition-all duration-500 ease-out shadow-[0_0_15px_hsl(var(--gold))]"
