@@ -36,7 +36,7 @@ const SuccessModal = ({ open, onClose, orderNumber }: SuccessModalProps) => {
 
             <div className="flex flex-col gap-3">
               <a
-                href="https://t.me/m/Z4ZIfl2yYjZi"
+                href="https://t.me/m/FulZsu6CZDk6"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
