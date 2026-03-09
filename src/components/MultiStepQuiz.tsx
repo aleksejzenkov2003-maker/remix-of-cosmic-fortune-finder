@@ -110,15 +110,19 @@ const MultiStepQuiz = ({
               <h2 className="text-2xl sm:text-3xl font-bold text-gradient-gold glow-gold">
                 Получите бесплатный астрологический разбор
               </h2>
+              <p className="text-sm  pt-6 sm:text-base font-semibold text-accent animate-bounce">
+                👇 Нажмите кнопку ниже
+              </p>
             </div>
 
             {/* Button */}
             <div className="flex-shrink-0">
               <Button
                 onClick={() => window.open('https://t.me/m/FulZsu6CZDk6', '_blank')}
-                className="w-full h-14 text-base font-semibold bg-gradient-gold hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,216,138,0.6)] hover:shadow-[0_0_50px_rgba(255,216,138,0.9)] border-0"
+                className="w-full h-14 text-base font-extrabold bg-gradient-gold hover:scale-[1.03] transition-all duration-300 shadow-[0_0_30px_rgba(255,216,138,0.6)] hover:shadow-[0_0_60px_rgba(255,216,138,1)] border-2 border-white/80 ring-4 ring-gold/40 relative overflow-hidden"
               >
-                Получить бесплатный анализ ✨
+                <span className="relative z-10">Получить бесплатный анализ ✨</span>
+                <div className="absolute -inset-1 rounded-xl bg-white/20 blur-md animate-pulse" />
               </Button>
             </div>
 
