@@ -112,21 +112,13 @@ const MultiStepQuiz = ({
               </h2>
             </div>
 
-            {/* Date picker */}
-            <div className="space-y-4">
-              <MysticDateScrollPicker value={formData.date} onChange={date => setFormData({
-              ...formData,
-              date
-            })} />
-              <p className="text-xs text-muted-foreground/80 leading-relaxed px-4 text-center">
-                Дата рождения важна для составления точной натальной карты
-              </p>
-            </div>
-            
             {/* Button */}
             <div className="flex-shrink-0">
-              <Button onClick={handleNext} disabled={!formData.date} className="w-full h-14 text-base font-semibold bg-gradient-gold hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 transition-all duration-300 shadow-[0_0_30px_rgba(255,216,138,0.6)] hover:shadow-[0_0_50px_rgba(255,216,138,0.9)] border-0">
-                Получить анализ ✨
+              <Button
+                onClick={() => window.open('https://t.me/m/FulZsu6CZDk6', '_blank')}
+                className="w-full h-14 text-base font-semibold bg-gradient-gold hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,216,138,0.6)] hover:shadow-[0_0_50px_rgba(255,216,138,0.9)] border-0"
+              >
+                Получить бесплатный анализ ✨
               </Button>
             </div>
 
